@@ -51,7 +51,7 @@ There are two kinds of pagination in SQL.
       2. Cursor-Based Pagination / Keyset Pagination / Seek Pagination.
 
 1. SQL OFFSET Pagination (Skip and Take)
-OFFSET in SQL is a common pagination method that displays data by skipping a certain number of rows, but it can be slow on large datasets.
+Offset pagination in SQL is a common pagination method that displays data by skipping a certain number of rows, but it can be slow on large datasets.
 
 How it works:
 It works using OFFSET and LIMIT. LIMIT 10 means showing the next 10 records and OFFSET 20 means skipping the first 20 records.
