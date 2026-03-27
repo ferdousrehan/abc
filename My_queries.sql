@@ -1,11 +1,7 @@
 /*
-Ans: 1 
------------*/
+Answer of the question no. 1 
+-------------------------------*/
 
-SELECT * FROM employee
-WHERE `salary` =  (SELECT DISTINCT(`salary`) FROM employee ORDER BY `salary` DESC  LIMIT 1 OFFSET 1) LIMIT 3;
-
--- Formatted
 SELECT *
 FROM   employee
 WHERE  `salary` = (SELECT DISTINCT( `salary` )
@@ -16,8 +12,8 @@ LIMIT 3;
 
 
 /*
-Ans: 2 
------------*/ 
+Answer of the question no. 2 
+-------------------------------*/
 
 SELECT *
 FROM   employee
@@ -29,15 +25,9 @@ LIMIT  1;
 
 
 /*
-Ans: 3
------------*/
+Answer of the question no. 3 
+-------------------------------*/
 
-SELECT AVG(PENDING_BALANCE) AS `Average Pending Balance`, OPEN_BRANCH_ID AS `Open Branch ID`
-FROM `account`
-WHERE STATUS = 'ACTIVE' && PENDING_BALANCE < 4300
-GROUP BY OPEN_BRANCH_ID;
-
--- Formatted.
 SELECT   Avg(pending_balance) AS `Average Pending Balance`,
          open_branch_id       AS `Open Branch ID`
 FROM     `account`
@@ -45,21 +35,20 @@ WHERE    status = 'ACTIVE' && pending_balance < 4300
 GROUP BY open_branch_id;
 
 
-
-
 /*
-Ans: D
------------*/
-# Offset-Based Pagination.
+Answer of the question no. D 
+-------------------------------*/
+
+Offset-Based Pagination Query.
 SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 10;
 
-# Cursor-Based Paginatio.
+Cursor-Based Paginatio Query.
 SELECT * FROM users WHERE id > 50 ORDER BY id LIMIT 10;
 
-# There are two kinds of pagination in SQL.
+There are two kinds of pagination in SQL.
 
-  1. Offset-Based Pagination / Page-Based.
-  2. Cursor-Based Pagination / Keyset Pagination / Seek Pagination.
+      1. Offset-Based Pagination / Page-Based.
+      2. Cursor-Based Pagination / Keyset Pagination / Seek Pagination.
 
 1. SQL OFFSET Pagination (Skip and Take)
 OFFSET in SQL is a common pagination method that displays data by skipping a certain number of rows, but it can be slow on large datasets.
@@ -103,9 +92,14 @@ LIMIT 10;
 This query shows 10 records which id is greater than 50.
 
 
-
 /*
-Ans: E
------------*/
+Answer of the question no. D 
+-------------------------------*/
 
 SELECT COUNT(DISTINCT OPEN_BRANCH_ID) AS `Total Branch Number` FROM `account`;
+
+
+
+
+
+
