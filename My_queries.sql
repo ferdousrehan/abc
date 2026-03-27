@@ -43,7 +43,7 @@ SELECT * FROM employees ORDER BY id LIMIT 10 OFFSET 0;
 Cursor-Based Paginatio Query.
 SELECT * FROM employees WHERE id > 50 ORDER BY id LIMIT 10;
 
-There are two kinds of pagination in SQL.
+There are two kinds of pagination query in SQL.
 
       1. Offset-Based Pagination / Page-Based.
       2. Cursor-Based Pagination / Keyset Pagination / Seek Pagination.
