@@ -4,9 +4,9 @@ Answer of the question no. 1
 
 SELECT *
 FROM   employee
-WHERE  `salary` = (SELECT DISTINCT( `salary` )
+WHERE  salary = (SELECT DISTINCT salary
                    FROM   employee
-                   ORDER  BY `salary` DESC
+                   ORDER  BY salary DESC
                    LIMIT  1 OFFSET 1) LIMIT 3;
 
 
@@ -28,7 +28,7 @@ Answer of the question no. 3
 
 SELECT   Avg(pending_balance) AS `Average Pending Balance`,
          open_branch_id       AS `Open Branch ID`
-FROM     `account`
+FROM     account
 WHERE    status = 'ACTIVE' && pending_balance < 4300
 GROUP BY open_branch_id;
 
@@ -38,10 +38,10 @@ Answer of the question no. D
 -------------------------------*/
 
 Offset-Based Pagination Query.
-SELECT * FROM users ORDER BY id LIMIT 10 OFFSET 10;
+SELECT * FROM employees ORDER BY id LIMIT 10 OFFSET 0;
 
 Cursor-Based Paginatio Query.
-SELECT * FROM users WHERE id > 50 ORDER BY id LIMIT 10;
+SELECT * FROM employees WHERE id > 50 ORDER BY id LIMIT 10;
 
 There are two kinds of pagination in SQL.
 
@@ -82,12 +82,12 @@ It is a bit complicated to implement. It only works on unique columns.
 
 Example:
 
-SELECT * FROM users
+SELECT * FROM employees
 WHERE id > 50
 ORDER BY id
 LIMIT 10;
 
-This query shows 10 records which id is greater than 50.
+This query shows 10 records which id are greater than 50.
 
 
 /*
